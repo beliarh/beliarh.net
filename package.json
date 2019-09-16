@@ -1,0 +1,24 @@
+{
+  "name": "beliarh.net",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Dmitry Artemov <art.beliarh@gmail.com> (https://beliarh.net/)",
+  "license": "ISC",
+  "homepage": "https://beliarh.net/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beliarh/beliarh.net.git"
+  },
+  "bugs": {
+    "url": "https://github.com/beliarh/beliarh.net/issues"
+  },
+  "scripts": {
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url https://beliarh.net/"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "parcel": "^1.12.3",
+    "parcel-plugin-static-files-copy": "^2.2.1"
+  }
+}

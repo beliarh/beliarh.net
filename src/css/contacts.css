@@ -1,0 +1,95 @@
+@keyframes contacts-mask-show {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.contacts {
+  flex-shrink: 0;
+  margin-top: 1.5rem;
+}
+
+.contacts__mask {
+  fill: #fff;
+  transform: scaleX(0);
+  transform-origin: 50% 50%;
+  animation-name: contacts-mask-show;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+.contacts__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.contacts__item {
+  list-style-type: none;
+  margin: 0 0.25rem;
+}
+
+.contacts__link {
+  position: relative;
+  display: block;
+  transition: transform 0.3s;
+  transform: translateZ(0);
+}
+
+.contacts__link:hover {
+  z-index: 2;
+  transform: scale(1.25) translateZ(0);
+}
+
+.contacts__icon {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+}
+
+.contacts__icon path {
+  mask: url("#contacts-mask");
+}
+
+.contacts__icon--facebook {
+  fill: #3b5998;
+}
+
+.contacts__icon--twitter {
+  fill: #1da1f2;
+}
+
+.contacts__icon--github {
+  fill: #222;
+}
+
+.contacts__icon--email {
+  fill: #ea4335;
+}
+
+.contacts__icon--linkedin {
+  fill: #0077b5;
+}
+
+.contacts__icon--telegram {
+  fill: #08c;
+}
+
+@media (prefers-reduced-motion: reduce), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .contacts__mask {
+    animation: none;
+    transform: none;
+  }
+
+  .contacts__link,
+  .contacts__link:hover {
+    transform: none;
+  }
+}

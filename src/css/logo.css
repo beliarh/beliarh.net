@@ -1,0 +1,175 @@
+@keyframes logo-slash-show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes logo-d1-move {
+  0% {
+    transform: translateX(35.4px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes logo-a1-move {
+  0% {
+    transform: translateX(-15px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes logo-mask-slash-move {
+  0% {
+    transform: translateX(15px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes logo-mask-d-move {
+  0% {
+    transform: translateX(120px);
+  }
+
+  100% {
+    transform: translateX(50px);
+  }
+}
+
+@keyframes logo-mask-a-move {
+  0% {
+    transform: translateX(250px);
+  }
+
+  100% {
+    transform: translateX(180px);
+  }
+}
+
+.logo {
+  flex-shrink: 0;
+  overflow: visible;
+  width: 15.625rem;
+  height: 9.6875rem;
+  transform: translateZ(0);
+}
+
+.logo__mask-d,
+.logo__mask-a,
+.logo__mask-slash {
+  fill: #fff;
+  animation-duration: 1s;
+  animation-delay: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+.logo__mask-d {
+  transform: translateX(120px);
+  animation-name: logo-mask-d-move;
+}
+
+.logo__mask-a {
+  transform: translateX(250px);
+  animation-name: logo-mask-a-move;
+}
+
+.logo__mask-slash {
+  transform: translateX(15px);
+  animation-name: logo-mask-slash-move;
+}
+
+.logo__d1,
+.logo__a1 {
+  fill: #000;
+  animation-duration: 1s;
+  animation-delay: 0.8s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+.logo__d1 {
+  transform: translateX(35.4px);
+  animation-name: logo-d1-move;
+}
+
+.logo__d1 path {
+  mask: url("#logo-mask-d1");
+}
+
+.logo__a1 {
+  transform: translateX(-15px);
+  animation-name: logo-a1-move;
+}
+
+.logo__a1 path {
+  mask: url("#logo-mask-a1");
+}
+
+.logo__slash {
+  opacity: 0;
+  animation-name: logo-slash-show;
+  animation-duration: 0.3s;
+  animation-delay: 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.logo__d2,
+.logo__a2 {
+  fill: #ea4335;
+}
+
+.logo__d2 {
+  mask: url("#logo-mask-d2");
+}
+
+.logo__a2 {
+  mask: url("#logo-mask-a2");
+}
+
+@media (prefers-reduced-motion: reduce), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .logo__mask-d,
+  .logo__mask-a,
+  .logo__mask-slash,
+  .logo__d1,
+  .logo__a1,
+  .logo__slash {
+    animation: none;
+  }
+
+  .logo__mask-d {
+    transform: translateX(50px);
+  }
+
+  .logo__mask-a {
+    transform: translateX(180px);
+  }
+
+  .logo__mask-slash,
+  .logo__d1,
+  .logo__a1 {
+    transform: translateX(0);
+  }
+
+  .logo__slash {
+    opacity: 1;
+  }
+
+  .logo__slash,
+  .logo__d2,
+  .logo__a2 {
+    mask: none;
+  }
+}
