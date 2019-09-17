@@ -55,7 +55,7 @@
 }
 
 .contacts__icon path {
-  mask: url("#contacts-mask");
+  mask: url('#contacts-mask');
 }
 
 .contacts__icon--facebook {
