@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - node
+branches:
+  only:
+    - master
+script:
+  - npm run build
+after_success:
+  - find dist -type f -exec curl -T {} -u ${FTP_USER}:${FTP_PASSWORD} --ftp-create-dirs ftp://beliarh.net/ \;
