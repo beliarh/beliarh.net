@@ -1,11 +1,11 @@
 const favicon = {
   light: {
-    '16x16': require('../images/favicon-light-16x16.png'),
-    '32x32': require('../images/favicon-light-32x32.png'),
+    '16x16': require('./images/favicon-light-16x16.png'),
+    '32x32': require('./images/favicon-light-32x32.png'),
   },
   dark: {
-    '16x16': require('../images/favicon-dark-16x16.png'),
-    '32x32': require('../images/favicon-dark-32x32.png'),
+    '16x16': require('./images/favicon-dark-16x16.png'),
+    '32x32': require('./images/favicon-dark-32x32.png'),
   },
 };
 
