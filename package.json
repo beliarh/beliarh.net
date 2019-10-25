@@ -16,24 +16,39 @@
     "start": "parcel src/*.html",
     "prebuild": "rimraf public_html",
     "build": "parcel build src/*.html --out-dir public_html",
+    "lint:js": "eslint \"src/**/*.js\"",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "lint": "npm run lint:js && npm run lint:css",
     "format": "prettier --write \"**/*.{html,css,js,json}\""
   },
   "browserslist": [
     "last 2 versions",
     "> 1%"
   ],
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-prettier/recommended"
+    ]
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2019,
+      "sourceType": "module"
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ]
+  },
   "prettier": {
     "singleQuote": true,
     "trailingComma": "es5"
-  },
-  "devDependencies": {
-    "autoprefixer": "^9.7.0",
-    "husky": "^3.0.9",
-    "lint-staged": "^9.4.2",
-    "parcel": "^1.12.4",
-    "parcel-plugin-static-files-copy": "^2.2.1",
-    "prettier": "^1.18.2",
-    "rimraf": "^3.0.0"
   },
   "husky": {
     "hooks": {
@@ -44,6 +59,34 @@
     "*.{html,css,js,json}": [
       "prettier --write",
       "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.css": [
+      "stylelint --fix",
+      "git add"
     ]
+  },
+  "staticFiles": {
+    "staticPath": "static",
+    "watcherGlob": "**"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.0",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "parcel": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.2.1",
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
+    "stylelint": "^11.1.1",
+    "stylelint-config-prettier": "^6.0.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-prettier": "^1.1.1"
   }
 }
