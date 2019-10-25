@@ -1,4 +1,4 @@
 .cache/
 .idea/
-dist/
 node_modules/
+public_html/
