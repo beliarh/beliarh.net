@@ -1,0 +1,59 @@
+.logo__mask-d,
+.logo__mask-a,
+.logo__mask-slash,
+.logo__d1,
+.logo__a1,
+.logo__slash {
+  animation: none;
+}
+
+.logo__mask-d {
+  transform: translateX(50px);
+}
+
+.logo__mask-a {
+  transform: translateX(180px);
+}
+
+.logo__mask-slash,
+.logo__d1,
+.logo__a1 {
+  transform: translateX(0);
+}
+
+.logo__slash {
+  opacity: 1;
+}
+
+.logo__slash,
+.logo__d2,
+.logo__a2 {
+  mask: none;
+}
+
+.title__part,
+.title__wrapper,
+.title__word {
+  display: inline;
+  animation: none;
+}
+
+.title__part,
+.title__wrapper {
+  transform: none;
+}
+
+.title__word {
+  opacity: 1;
+  transform: none;
+}
+
+.contacts__mask {
+  animation: none;
+  transform: none;
+}
+
+.contacts__link,
+.contacts__link:hover {
+  transform: none;
+}
